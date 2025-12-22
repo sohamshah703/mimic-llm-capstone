@@ -1,0 +1,37 @@
+import os
+import sys
+import pandas as pd
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+from paths import ICU_PROC_DIR, COHORT_META_DIR, ICU_PROC_COHORT_DIR
+
+
+def main():
+    cohort_path = os.path.join(COHORT_META_DIR, "cohort_icu_250.parquet")
+    med_path = os.path.join(ICU_PROC_DIR, "medications_clean.parquet")
+
+    print("Reading cohort from:", cohort_path)
+    print("Reading medications from:", med_path)
+
+    cohort = pd.read_parquet(cohort_path)
+    meds = pd.read_parquet(med_path)
+
+    stay_ids = set(cohort["stay_id"].unique())
+    print("Number of cohort stay_ids:", len(stay_ids))
+
+    meds_cohort = meds[meds["stay_id"].isin(stay_ids)].copy()
+
+    out_path = os.path.join(ICU_PROC_COHORT_DIR, "medications_clean_icu_250.parquet")
+    meds_cohort.to_parquet(out_path, index=False)
+
+    print(f"Saved cohort-filtered medications to: {out_path}")
+    print(f"Rows: {len(meds_cohort)}, Cols: {len(meds_cohort.columns)}")
+
+
+if __name__ == "__main__":
+    main()

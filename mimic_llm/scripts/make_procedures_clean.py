@@ -1,0 +1,68 @@
+import os
+import sys
+import pandas as pd
+
+# --- Make sure Python can see paths.py in the project root ---
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))      # .../mimic_llm/scripts
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)                   # .../mimic_llm
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+from paths import HOSP_DIR, HOSP_PROC_DIR
+
+
+def main():
+    # 1. Define input paths for procedures and dictionary
+    proc_path = os.path.join(HOSP_DIR, "procedures_icd.csv.gz")
+    proc_dict_path = os.path.join(HOSP_DIR, "d_icd_procedures.csv.gz")
+
+    print("Reading procedures from:", proc_path)
+    print("Reading procedures dictionary from:", proc_dict_path)
+
+    # 2. Read raw tables
+    procedures = pd.read_csv(proc_path, compression="gzip")
+    proc_dict = pd.read_csv(proc_dict_path, compression="gzip")
+
+    # 3. Ensure dictionary has unique (icd_code, icd_version) pairs
+    if {"icd_code", "icd_version"}.issubset(proc_dict.columns):
+        proc_dict = proc_dict.drop_duplicates(subset=["icd_code", "icd_version"])
+
+    # 4. Merge to attach long_title (human-readable procedure description)
+    df = procedures.merge(
+        proc_dict,
+        on=["icd_code", "icd_version"],
+        how="left",
+        validate="m:1"  # many procedures rows to 1 dictionary row
+    )
+
+    # 5. Convert procedure date to datetime for easier use
+    if "chartdate" in df.columns:
+        df["procedure_chartdatetime"] = pd.to_datetime(df["chartdate"], errors="coerce")
+        df["procedure_date"] = df["procedure_chartdatetime"].dt.date
+        # Drop original chartdate so we don't have duplicates
+        df = df.drop(columns=["chartdate"])
+
+    # 6. Rename columns to make their purpose clear
+    if "seq_num" in df.columns:
+        df = df.rename(columns={"seq_num": "proc_seq_num"})
+
+    if "long_title" in df.columns:
+        df = df.rename(columns={"long_title": "proc_long_title"})
+
+    # 7. Optionally drop raw code columns (we have proc_long_title now)
+    cols_to_drop = [c for c in ["icd_code", "icd_version"] if c in df.columns]
+    if cols_to_drop:
+        df = df.drop(columns=cols_to_drop)
+
+    # 8. Save to processed folder as Parquet
+    out_path = os.path.join(HOSP_PROC_DIR, "procedures_clean.parquet")
+    df.to_parquet(out_path, index=False)
+
+    print(f"Saved cleaned procedures table to: {out_path}")
+    print(f"Rows: {len(df)}, Columns: {len(df.columns)}")
+
+
+if __name__ == "__main__":
+    main()

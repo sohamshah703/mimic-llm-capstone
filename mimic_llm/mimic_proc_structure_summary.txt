@@ -1,0 +1,187 @@
+mimic_proc_data folder overview
+===============================
+Root directory: /scratch/soham_shah/mimic_proc_data
+
+Total tables (PARQUET/CSV/CSV.GZ files): 10
+
+
+Subdirectory: hosp
+------------------
+
+Table: diagnoses_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/hosp/diagnoses_clean.parquet
+  Shape: 6364488 rows x 4 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - dx_seq_num
+    - dx_long_title
+
+Table: lab_tests_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/hosp/lab_tests_clean.parquet
+  Shape: 158374764 rows x 12 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - lab_tests_charttime
+    - lab_tests_value
+    - lab_tests_valuenum
+    - lab_tests_valueuom
+    - lab_tests_warning
+    - lab_tests_label
+    - lab_tests_fluid
+    - lab_tests_category
+    - lab_tests_date
+    - lab_tests_time
+
+Table: patients_admissions_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/hosp/patients_admissions_clean.parquet
+  Shape: 546028 rows x 16 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - admittime
+    - dischtime
+    - deathtime
+    - admission_type
+    - admission_location
+    - discharge_location
+    - edregtime
+    - edouttime
+    - hospital_expire_flag
+    - gender
+    - anchor_age
+    - deathdate
+    - admit_date
+    - discharge_date
+
+Table: procedures_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/hosp/procedures_clean.parquet
+  Shape: 859655 rows x 6 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - proc_seq_num
+    - proc_long_title
+    - procedure_chartdatetime
+    - procedure_date
+
+
+Subdirectory: icu
+-----------------
+
+Table: icustays_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/icu/icustays_clean.parquet
+  Shape: 94458 rows x 10 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - stay_id
+    - first_careunit
+    - last_careunit
+    - intime
+    - outtime
+    - los
+    - icu_intake_date
+    - icu_out_date
+
+Table: measurements_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/icu/measurements_clean.parquet
+  Shape: 432997491 rows x 15 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - stay_id
+    - measurements_charttime
+    - measurements_value
+    - measurements_valuenum
+    - measurements_valueuom
+    - measurements_warning
+    - measurements_label
+    - measurements_category
+    - measurements_unitname
+    - measurements_lownormalvalue
+    - measurements_highnormalvalue
+    - measurements_date
+    - measurements_time
+
+Table: medications_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/icu/medications_clean.parquet
+  Shape: 10953713 rows x 20 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - stay_id
+    - medications_amount
+    - medications_amountuom
+    - medications_rate
+    - medications_rateuom
+    - medications_ordercategoryname
+    - medications_ordercomponenttypedescription
+    - medications_ordercategorydescription
+    - medications_patientweight
+    - medications_label
+    - medications_category
+    - medications_unitname
+    - medications_lownormalvalue
+    - medications_highnormalvalue
+    - medications_start_date
+    - medications_start_time
+    - medications_end_date
+    - medications_end_time
+
+Table: outputevents_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/icu/outputevents_clean.parquet
+  Shape: 5359395 rows x 12 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - stay_id
+    - outputevents_charttime
+    - outputevents_value
+    - outputevents_valueuom
+    - outputevents_label
+    - outputevents_category
+    - outputevents_unitname
+    - outputevents_warning
+    - outputevents_date
+    - outputevents_time
+
+Table: procedureevents_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/icu/procedureevents_clean.parquet
+  Shape: 808706 rows x 15 columns
+  Column names:
+    - subject_id
+    - hadm_id
+    - stay_id
+    - procedureevents_value
+    - procedureevents_valueuom
+    - procedureevents_location
+    - procedureevents_ordercategoryname
+    - procedureevents_ordercategorydescription
+    - procedureevents_statusdescription
+    - procedureevents_label
+    - procedureevents_category
+    - procedureevents_unitname
+    - procedureevents_warning
+    - procedureevents_start_date
+    - procedureevents_end_date
+
+
+Subdirectory: notes
+-------------------
+
+Table: discharge_clean.parquet
+Full path: /scratch/soham_shah/mimic_proc_data/notes/discharge_clean.parquet
+  Shape: 331793 rows x 9 columns
+  Column names:
+    - note_id
+    - subject_id
+    - hadm_id
+    - note_type
+    - note_seq
+    - charttime
+    - storetime
+    - text
+    - discharge_note_date
+

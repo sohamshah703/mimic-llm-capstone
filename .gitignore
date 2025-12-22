@@ -1,0 +1,26 @@
+# .gitignore
+
+# 1. Ignore Python System Files
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# 2. Ignore Virtual Environments
+env/
+venv/
+.conda/
+
+# 3. CRITICAL: Ignore ALL Data Files
+*.csv
+*.csv.gz
+*.parquet
+/exports/
+/logs/
+
+# 4. Ignore the huge Precomputed JSON (Optional)
+# If the JSON is small (<50MB) you can keep it. 
+# If it's huge, ignore it, or use Git LFS.
+precomputed_cohort_summaries.json
+
+# 5. Ignore VS Code settings
+.vscode/

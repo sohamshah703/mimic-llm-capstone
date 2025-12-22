@@ -1,0 +1,1426 @@
+====================================================================================================
+STAY_ID = 38657298
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+TABLE: stay_id
+(Non-DataFrame object of type int)
+
+38657298
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hadm_id
+(Non-DataFrame object of type int)
+
+20849847
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: subject_id
+(Non-DataFrame object of type int)
+
+11533366
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: cohort_row
+(Non-DataFrame object of type Series)
+
+subject_id                                                 11533366
+hadm_id                                                    20849847
+stay_id                                                    38657298
+first_careunit     Medical/Surgical Intensive Care Unit (MICU/SICU)
+last_careunit      Medical/Surgical Intensive Care Unit (MICU/SICU)
+intime                                          2176-04-12 17:51:36
+outtime                                         2176-04-13 18:45:27
+los                                                        1.037396
+icu_intake_date                                          2176-04-12
+icu_out_date                                             2176-04-13
+Name: 3, dtype: object
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: icu
+(Non-DataFrame object of type dict)
+
+{'icustays':     subject_id   hadm_id   stay_id                                    first_careunit  ...             outtime       los icu_intake_date  icu_out_date
+34    11533366  20849847  38657298  Medical/Surgical Intensive Care Unit (MICU/SICU)  ... 2176-04-13 18:45:27  1.037396      2176-04-12    2176-04-13
+
+[1 rows x 10 columns], 'measurements':         subject_id   hadm_id   stay_id measurements_charttime  ... measurements_lownormalvalue  measurements_highnormalvalue measurements_date  measurements_time
+134170    11533366  20849847  38657298    2176-04-12 17:51:00  ...                         NaN                           NaN        2176-04-12           17:51:00
+134171    11533366  20849847  38657298    2176-04-12 20:00:00  ...                         NaN                           NaN        2176-04-12           20:00:00
+134172    11533366  20849847  38657298    2176-04-12 20:00:00  ...                         NaN                           NaN        2176-04-12           20:00:00
+134173    11533366  20849847  38657298    2176-04-12 20:00:00  ...                         NaN                           NaN        2176-04-12           20:00:00
+134174    11533366  20849847  38657298    2176-04-12 20:00:00  ...                         NaN                           NaN        2176-04-12           20:00:00
+...            ...       ...       ...                    ...  ...                         ...                           ...               ...                ...
+135328    11533366  20849847  38657298    2176-04-13 14:39:00  ...                         NaN                           NaN        2176-04-13           14:39:00
+135329    11533366  20849847  38657298    2176-04-13 14:39:00  ...                         NaN                           NaN        2176-04-13           14:39:00
+135330    11533366  20849847  38657298    2176-04-13 14:39:00  ...                         NaN                           NaN        2176-04-13           14:39:00
+135331    11533366  20849847  38657298    2176-04-13 14:39:00  ...                         NaN                           NaN        2176-04-13           14:39:00
+135332    11533366  20849847  38657298    2176-04-13 14:39:00  ...                         NaN                           NaN        2176-04-13           14:39:00
+
+[1163 rows x 15 columns], 'medications':       subject_id   hadm_id   stay_id  medications_amount  ... medications_start_date  medications_start_time medications_end_date medications_end_time
+1853    11533366  20849847  38657298          999.999976  ...             2176-04-12                21:45:00           2176-04-13             02:45:00
+1854    11533366  20849847  38657298            1.000000  ...             2176-04-12                22:00:00           2176-04-12             22:01:00
+1855    11533366  20849847  38657298           20.000000  ...             2176-04-12                22:15:00           2176-04-12             22:16:00
+1856    11533366  20849847  38657298           20.000000  ...             2176-04-13                01:30:00           2176-04-13             01:31:00
+1857    11533366  20849847  38657298            5.000000  ...             2176-04-13                02:30:00           2176-04-13             02:31:00
+1858    11533366  20849847  38657298          999.999976  ...             2176-04-13                02:45:00           2176-04-13             07:45:00
+1859    11533366  20849847  38657298            2.000000  ...             2176-04-13                03:15:00           2176-04-13             04:15:00
+1860    11533366  20849847  38657298           49.999999  ...             2176-04-13                03:15:00           2176-04-13             04:15:00
+1861    11533366  20849847  38657298           20.000001  ...             2176-04-13                04:15:00           2176-04-13             05:15:00
+1862    11533366  20849847  38657298           49.999999  ...             2176-04-13                04:15:00           2176-04-13             05:15:00
+1863    11533366  20849847  38657298          993.299988  ...             2176-04-13                10:47:00           2176-04-13             15:45:00
+1864    11533366  20849847  38657298           20.000000  ...             2176-04-13                08:06:00           2176-04-13             08:07:00
+1865    11533366  20849847  38657298            5.000000  ...             2176-04-13                08:25:00           2176-04-13             08:26:00
+1866    11533366  20849847  38657298           20.000000  ...             2176-04-13                14:00:00           2176-04-13             14:01:00
+1867    11533366  20849847  38657298            5.000000  ...             2176-04-13                14:00:00           2176-04-13             14:01:00
+1868    11533366  20849847  38657298            1.000000  ...             2176-04-13                14:04:00           2176-04-13             14:05:00
+1869    11533366  20849847  38657298           10.000000  ...             2176-04-13                14:04:00           2176-04-13             14:05:00
+1870    11533366  20849847  38657298          999.999953  ...             2176-04-13                14:04:00           2176-04-13             14:05:00
+1871    11533366  20849847  38657298          596.666652  ...             2176-04-13                15:45:00           2176-04-13             18:44:00
+
+[19 rows x 20 columns], 'outputevents':       subject_id   hadm_id   stay_id outputevents_charttime  ...  outputevents_unitname outputevents_warning outputevents_date outputevents_time
+1745    11533366  20849847  38657298    2176-04-12 20:00:00  ...                     mL                    0        2176-04-12          20:00:00
+1746    11533366  20849847  38657298    2176-04-12 21:00:00  ...                     mL                    0        2176-04-12          21:00:00
+1747    11533366  20849847  38657298    2176-04-12 22:00:00  ...                     mL                    0        2176-04-12          22:00:00
+1748    11533366  20849847  38657298    2176-04-12 23:00:00  ...                     mL                    0        2176-04-12          23:00:00
+1749    11533366  20849847  38657298    2176-04-13 00:00:00  ...                     mL                    0        2176-04-13          00:00:00
+1750    11533366  20849847  38657298    2176-04-13 01:00:00  ...                     mL                    0        2176-04-13          01:00:00
+1751    11533366  20849847  38657298    2176-04-13 02:00:00  ...                     mL                    0        2176-04-13          02:00:00
+1752    11533366  20849847  38657298    2176-04-13 03:00:00  ...                     mL                    0        2176-04-13          03:00:00
+1753    11533366  20849847  38657298    2176-04-13 05:00:00  ...                     mL                    0        2176-04-13          05:00:00
+1754    11533366  20849847  38657298    2176-04-13 06:00:00  ...                     mL                    0        2176-04-13          06:00:00
+1755    11533366  20849847  38657298    2176-04-13 07:00:00  ...                     mL                    0        2176-04-13          07:00:00
+1756    11533366  20849847  38657298    2176-04-13 10:00:00  ...                     mL                    0        2176-04-13          10:00:00
+1757    11533366  20849847  38657298    2176-04-13 12:00:00  ...                     mL                    0        2176-04-13          12:00:00
+1758    11533366  20849847  38657298    2176-04-13 13:00:00  ...                     mL                    0        2176-04-13          13:00:00
+1759    11533366  20849847  38657298    2176-04-13 14:00:00  ...                     mL                    0        2176-04-13          14:00:00
+1760    11533366  20849847  38657298    2176-04-13 16:00:00  ...                     mL                    0        2176-04-13          16:00:00
+1761    11533366  20849847  38657298    2176-04-13 17:00:00  ...                     mL                    0        2176-04-13          17:00:00
+1762    11533366  20849847  38657298    2176-04-13 18:00:00  ...                     mL                    0        2176-04-13          18:00:00
+1763    11533366  20849847  38657298    2176-04-13 08:00:00  ...                     mL                    0        2176-04-13          08:00:00
+
+[19 rows x 12 columns], 'procedureevents':      subject_id   hadm_id   stay_id  ...  procedureevents_warning procedureevents_start_date procedureevents_end_date
+190    11533366  20849847  38657298  ...                        0                 2176-04-12               2176-04-13
+191    11533366  20849847  38657298  ...                        0                 2176-04-13               2176-04-13
+
+[2 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hosp
+(Non-DataFrame object of type dict)
+
+{'patients_admissions':     subject_id   hadm_id           admittime           dischtime deathtime  ... gender anchor_age  deathdate  admit_date discharge_date
+34    11533366  20849847 2176-04-12 16:40:00 2176-04-19 20:00:00       NaT  ...      F         60 2176-07-11  2176-04-12     2176-04-19
+
+[1 rows x 16 columns], 'diagnoses':      subject_id   hadm_id  dx_seq_num                                      dx_long_title
+595    11533366  20849847           1                                 Acute pancreatitis
+596    11533366  20849847           2                               Toxic encephalopathy
+597    11533366  20849847           3                  Acute kidney failure, unspecified
+598    11533366  20849847           4                     Chronic systolic heart failure
+599    11533366  20849847           5              Congestive heart failure, unspecified
+600    11533366  20849847           6  Hypertensive chronic kidney disease, unspecifi...
+601    11533366  20849847           7       Chronic kidney disease, Stage III (moderate)
+602    11533366  20849847           8                                Atrial fibrillation
+603    11533366  20849847           9  Chronic airway obstruction, not elsewhere clas...
+604    11533366  20849847          10               Other and unspecified hyperlipidemia
+605    11533366  20849847          11   Personal history of malignant neoplasm of breast
+606    11533366  20849847          12  Personal history of malignant neoplasm of bron...
+607    11533366  20849847          13  Personal history of malignant neoplasm of trachea
+608    11533366  20849847          14                  Myalgia and myositis, unspecified
+609    11533366  20849847          15                              Chronic pain syndrome
+610    11533366  20849847          16      Depressive disorder, not elsewhere classified
+611    11533366  20849847          17                               Rheumatoid arthritis
+612    11533366  20849847          18                                  Esophageal reflux
+613    11533366  20849847          19                               Obesity, unspecified
+614    11533366  20849847          20  Personal history of irradiation, presenting ha...
+615    11533366  20849847          21    Personal history of antineoplastic chemotherapy
+616    11533366  20849847          22  Tetracycline group causing adverse effects in ...
+617    11533366  20849847          23                Long-term (current) use of steroids, 'procedures':     subject_id   hadm_id  proc_seq_num                                   proc_long_title  ... procedure_date   stay_id              intime             outtime
+22    11533366  20849847             1  Venous catheterization, not elsewhere classified  ...     2176-04-13  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+
+[1 rows x 9 columns], 'labs':       subject_id     hadm_id lab_tests_charttime                          lab_tests_value  ...  lab_tests_time   stay_id              intime             outtime
+5795    11533366  20849847.0 2176-04-12 20:30:00  HOLD.  DISCARD GREATER THAN 24 HRS OLD.  ...        20:30:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5796    11533366  20849847.0 2176-04-12 20:30:00                                      NEG  ...        20:30:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5797    11533366  20849847.0 2176-04-12 20:30:00                                      NEG  ...        20:30:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5798    11533366  20849847.0 2176-04-12 20:30:00                                      NEG  ...        20:30:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5799    11533366  20849847.0 2176-04-12 20:30:00                                      NEG  ...        20:30:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+...          ...         ...                 ...                                      ...  ...             ...       ...                 ...                 ...
+5889    11533366  20849847.0 2176-04-13 14:39:00                                      ___  ...        14:39:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5890    11533366  20849847.0 2176-04-13 14:39:00                                      4.0  ...        14:39:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5891    11533366  20849847.0 2176-04-13 14:39:00                                      140  ...        14:39:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5892    11533366  20849847.0 2176-04-13 14:39:00                                      ___  ...        14:39:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+5893    11533366  20849847.0 2176-04-13 14:39:00                                       45  ...        14:39:00  38657298 2176-04-12 17:51:36 2176-04-13 18:45:27
+
+[99 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: discharge_text
+(Non-DataFrame object of type str)
+
+Name:  ___                  Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Aspirin / Shellfish / OxyContin / Codeine / Acetaminophen / 
+morphine
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Nausea, vomitting, chest pain
+ 
+Major Surgical or Invasive Procedure:
+PICC placement right arm
+
+ 
+History of Present Illness:
+Ms. ___ is a ___ with a past medical history of CHF, Afib, 
+COPD, CKD III, RA, HTN, HLD, breast ca, lung ca, and tracheal 
+ca, who who presents w/ nausea, vomiting, chest pain and 
+lethargy. 
+
+Pt was somnolent on arrival and all history was obtained from 
+her son/HCP. At baseline, pt lives at home, she is able to walk 
+with a walker. She is A+Ox3. 1d prior pt went to church and ate 
+at ___. Shortly thereafter, she developed nausea and 
+vomiting. Per family, breathing was labored. Pt also endorsed 
+CP, but this is difficult to clarify with family. In addition, 
+she endorsed feeling warm and having had diarrhea.  
+
+In the ED, initial VS: T 97.4 (Tm 99.5) P ___ BP 146/101 R 18 
+O2 Sat 100% RA. Labs were significant for Cr 2.4, lipase 1250, 
+UA negative. RUQ US was unremarkable. EKG showed sinus rhythm at 
+8-bpm, LAD, LBBB, unchanged from prior. CTH showed no acute 
+anomalies. GI evaluated pt and recommended IVF, NPO, and to hold 
+off on CT abdomen. 
+
+On arrival to the MICU, pt is somnolent and not able to respond 
+to questions. 
+ 
+Past Medical History:
+- CHF ___ echo: EF 40-45%, global dyskinesis, LV 
+hypertrophy, RV dilation, dyssyncrhony)
+- Afib on coumadin
+- COPD
+- CKD (baseline creat 2.0-2.1)
+- Fibromyalgia/chronic pain syndrome
+- Osteoarthritis
+- Rheumatoid arthritis, on narcotics agreement
+- Asthma 
+- Bronchomalacia 
+- Chronic rhinosinusitis 
+- Hypertension  
+- Depression  
+- Hyperlipidemia  
+- Obesity  
+- Migraine  
+- GERD  
+- Bilateral carpal tunnel syndrome w/ hand weakness  
+- Spondylolisthesis of L4-5, radiculopathy w/stenosis  
+- Right total shoulder arthroplasty ___  
+- Right total knee arthroplasty  
+- Left shoulder replacement  
+- Breast cancer stage II (T2N0M0), ___: treated with 
+lumpectomy, XRT, and CMF. No evidence of recurrent disease.  
+- Lung SCC stage IA (T1bN0M0), resected on ___   
+- Tracheal cancer diagnosed in ___ s/p chemo and XRT w/ 
+complete resolution when imaged in ___ and ___ ___ut 
+residual dysphagia s/p dilatation 
+ 
+Social History:
+___
+Family History:
+Mother had breast cancer, died of MI. Father had rectal cancer. 
+ 
+Physical Exam:
+ADMISSION PHYSICAL EXAM:
+=========================
+General- Somolent; able to answer simple questions with 
+extensive redirection
+HEENT- Mild proptosis; pinpoint pupils  
+Neck- supple, JVP not elevated, no LAD  
+Lungs- Clear to auscultation bilaterally, no wheezes, rales, 
+ronchi  
+CV- Regular rate and rhythm, normal S1 + S2, no murmurs, rubs, 
+gallops  
+Abdomen- Obese; voluntary guarding, mild diffuse ttp  
+GU- +foley
+Ext- warm, well perfused, 2+ pulses, no clubbing, cyanosis or 
+edema; s= multiple ___ amputations  
+Neuro- Moving all extremities spontaneoulsy; CNII-XII grossly 
+intact  
+
+ 
+Pertinent Results:
+ADMISSION LABS:
+================
+
+___ 09:50PM   TYPE-ART TEMP-36.9 O2 FLOW-3 PO2-172* PCO2-41 
+PH-7.41 TOTAL CO2-27 BASE XS-1 INTUBATED-NOT INTUBA 
+COMMENTS-NASAL ___
+___ 09:50PM   LACTATE-0.9
+___ 09:15PM   GLUCOSE-97 UREA N-53* CREAT-2.0* SODIUM-141 
+POTASSIUM-3.6 CHLORIDE-103 TOTAL CO2-22 ANION GAP-20
+___ 09:15PM   AMYLASE-704*
+___ 09:15PM   CK-MB-4 cTropnT-<0.01
+___ 09:15PM   CALCIUM-8.7 PHOSPHATE-3.6 MAGNESIUM-1.6
+___ 09:15PM   TRIGLYCER-112
+___ 09:15PM   WBC-10.9 RBC-3.59* HGB-12.1 HCT-39.1 MCV-109* 
+MCH-33.7* MCHC-30.9* RDW-15.1
+___ 09:15PM   NEUTS-88.1* LYMPHS-9.0* MONOS-2.5 EOS-0.4 
+BASOS-0.1
+___ 09:15PM   PLT COUNT-240
+___ 09:15PM   ___ PTT-40.4* ___
+___ 08:30PM   ASA-NEG ETHANOL-NEG ACETMNPHN-NEG 
+bnzodzpn-NEG barbitrt-NEG tricyclic-NEG
+___ 08:30PM URINE  bnzodzpn-NEG barbitrt-NEG opiates-NEG 
+cocaine-NEG amphetmn-NEG mthdone-NEG
+___ 01:46PM   LACTATE-1.9
+___ 01:30PM   GLUCOSE-94 UREA N-58* CREAT-2.4* SODIUM-139 
+POTASSIUM-3.4 CHLORIDE-97 TOTAL CO2-24 ANION GAP-21*
+___ 01:30PM   ALT(SGPT)-39 AST(SGOT)-35 ALK PHOS-83 TOT 
+BILI-0.3
+___ 01:30PM   LIPASE-1250*
+___ 01:30PM   ALBUMIN-4.3
+___ 01:30PM   WBC-9.2 RBC-4.15* HGB-14.0 HCT-44.7 MCV-108* 
+MCH-33.7* MCHC-31.3 RDW-15.3
+___ 01:30PM   NEUTS-84.3* LYMPHS-10.6* MONOS-4.3 EOS-0.2 
+BASOS-0.5
+___ 01:30PM   PLT COUNT-309
+___ 12:55PM URINE  BLOOD-NEG NITRITE-NEG PROTEIN-NEG 
+GLUCOSE-NEG KETONE-NEG BILIRUBIN-NEG UROBILNGN-NEG PH-6.0 
+LEUK-SM 
+___ 12:55PM URINE  RBC-<1 WBC-3 BACTERIA-NONE YEAST-NONE 
+EPI-<1
+
+=======================
+IMAGING:
+=======================
+
+Head ___
+FINDINGS:  There is no evidence of hemorrhage, edema, mass 
+effect, or large vascular territory infarction.  The ventricles 
+and sulci are enlarged, consistent with age-related volume loss. 
+ This is unchanged from the prior exam.  Periventricular 
+confluent white matter hypodensities are consistent with chronic 
+small vessel ischemic disease.  There is an unchanged lacunar 
+infarct in the left basal ganglia, and either a second lacunar 
+infarct or prominent vascular space in the right basal ganglia. 
+  
+No fracture is identified.  The visualized paranasal sinuses, 
+mastoid air 
+cells, and middle ear cavities are clear.  The soft tissues are 
+unremarkable. 
+  
+IMPRESSION:  No acute intracranial abnormality.  Unchanged 
+age-related volume loss, chronic small vessel ischemic disease, 
+and lacunar infarct. 
+
+Chest ___
+IMPRESSION: Status post right upper lobe resection with stable 
+volume loss in the right lung.  No other cardiopulmonary 
+abnormality. 
+  
+RUQ ultrasound: ___
+IMPRESSION:  Normal right upper quadrant ultrasound.  No 
+cholelithiasis or cholecystitis. 
+
+ 
+Brief Hospital Course:
+Assessment/Plan:
+This is a ___ y/o female with history of CHF, atrial fibrillation 
+on Coumadin, CKD, and RA on chronic steroids who presented with 
+pancreatitis likely due to doxycycline
+
+#Acute pancreatitis
+The patient presented with acute pancreatitis and was breifly in 
+the MICU for somnolence. She underwent a RUQ ultrasound without 
+evidence of gallstones. Patient denies alcohol use and 
+triglcerides were normal. The patient was seen by 
+gastroenterology who felt the most likely cause of pancreatitis 
+was doxycyline. She was managed conservatively with bowel rest 
+and IV fluids. She did not recieve IV narcotics given concerns 
+for somnolence (see below). Her pain improved and she was 
+tolerating a regular, low fat diet on discharge. GI recommended 
+an MRCP on resolution of her current pancreatitis to evaualte 
+for underlying malignancy. 
+
+#Toxic metabolic encephalopathy
+The patient presented with altered mental status, she was found 
+to be very somnolent. She had a Head CT, ABG and infectious work 
+up which was negative. Her chronic narcotics were held and she 
+improved significantly. She continued to have periods of 
+somnolence while on the floor, but was always able to be easily 
+aroused and was oriented x3. Her percocet was held and restarted 
+at a lower dose on discharge, daily as needed
+
+#Acute renal failure
+#Chronic kidney disease stage III
+The patient presented with acute renal failure with creatinine 
+of 2.4. Likely pre-renal in the setting of vomiting. The 
+patient's creatinine trended back to her baseline of 1.5-2. Her 
+___ was initally held but was quickly resumed. Lasix was held 
+throughout her hospitalization but was resumed on discharge.
+
+#Atrial fibrillation
+The patient remained on amiodarone. INR was supratherapeutic on 
+admission. Coumain was held until INR returned to the therpeutic 
+range and was then resumed at a lower overall dose of 2mg daily. 
+INR On discharge was 3.1
+
+#COPD
+The patient recent completed a course of doxycycline for a 
+possible COPD exacerbation. She was saturating well on room air 
+and was continued on Advair, albuterol.
+
+#Hypertension, benign
+BP well controlled currently. No changes were made to home 
+___.
+
+#Rheumatoid arthritis
+Continued prednisone, bactrim prophylaxis
+
+#IV access
+Patient had an ___ guided PICC placed for access. This was 
+removed prior to discharge.
+
+Transitional issues:
+- will need follow up MRCP to rule out underlying malignancy as 
+cause of pancreatitis
+- NOK/HCP: Son ___ ph: ___
+- Code: Full
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. Amiodarone 200 mg PO DAILY 
+2. Docusate Sodium 100 mg PO BID:PRN hard stool 
+3. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH BID 
+4. Furosemide 40 mg PO DAILY 
+5. Guaifenesin ER 1200 mg PO Q12H 
+6. Ipratropium Bromide Neb 1 NEB IH Q6H 
+7. leflunomide 10 mg oral daily 
+8. Lidocaine 5% Patch 1 PTCH TD DAILY 
+9. Losartan Potassium 25 mg PO DAILY 
+10. Metoprolol Succinate XL 200 mg PO DAILY 
+11. Montelukast Sodium 10 mg PO DAILY 
+12. Multivitamins W/minerals 1 TAB PO DAILY 
+13. Nystatin Cream 1 Appl TP BID 
+14. Oxycodone-Acetaminophen (5mg-325mg) 2 TAB PO Q6H 
+15. PredniSONE 20 mg PO DAILY 
+16. Vitamin D 1000 UNIT PO DAILY 
+17. esomeprazole magnesium 40 mg oral BID 
+18. Sulfameth/Trimethoprim SS 1 TAB PO DAILY 
+19. Albuterol 0.083% Neb Soln 1 NEB IH Q2H:PRN SOB 
+20. Warfarin 3 mg PO DAILY16 
+21. Loratadine 10 mg PO DAILY 
+22. Ranitidine 300 mg PO DAILY 
+23. Senna 17.2 mg PO HS 
+24. Albuterol Inhaler 2 PUFF IH Q4H:PRN sob 
+25. Acetaminophen-Caff-Butalbital 1 TAB PO ONCE 
+26. Nystatin Oral Suspension 5 mL PO BID:PRN thrush 
+
+ 
+Discharge Medications:
+1. Albuterol 0.083% Neb Soln 1 NEB IH Q2H:PRN SOB 
+2. Amiodarone 200 mg PO DAILY 
+3. Docusate Sodium 100 mg PO BID:PRN hard stool 
+4. Fluticasone-Salmeterol Diskus (250/50)  1 INH IH BID 
+5. Ipratropium Bromide Neb 1 NEB IH Q6H 
+6. Lidocaine 5% Patch 1 PTCH TD DAILY 
+7. Losartan Potassium 25 mg PO DAILY 
+8. Metoprolol Succinate XL 200 mg PO DAILY 
+9. Nystatin Cream 1 Appl TP BID 
+10. PredniSONE 20 mg PO DAILY 
+11. Ranitidine 300 mg PO DAILY 
+12. Sulfameth/Trimethoprim SS 1 TAB PO DAILY 
+13. Vitamin D 1000 UNIT PO DAILY 
+14. Warfarin 2 mg PO DAILY16 
+15. esomeprazole magnesium 40 mg oral BID 
+16. Furosemide 40 mg PO DAILY 
+17. leflunomide 10 mg ORAL DAILY 
+18. Loratadine 10 mg PO DAILY 
+19. Montelukast Sodium 10 mg PO DAILY 
+20. Multivitamins W/minerals 1 TAB PO DAILY 
+21. Albuterol Inhaler 2 PUFF IH Q4H:PRN sob 
+22. Acetaminophen-Caff-Butalbital 1 TAB PO ONCE Duration: 1 Dose 
+
+23. Nystatin Oral Suspension 5 mL PO BID:PRN thrush 
+24. Senna 17.2 mg PO HS 
+
+ 
+Discharge Disposition:
+Home With Service
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Acute pancreatitis
+Acute renal failure
+Toxic metabolic encephalopathy (confusion)
+COPD
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - requires assistance or aid (walker 
+or cane).
+
+ 
+Discharge Instructions:
+It was a pleasure taking care of you during your admission to 
+___. You were admitted with pancreatitis (inflammation in your 
+pancreas) which was likely due to doxycycline. You were treated 
+with bowel rest (nothing to eat) and IV fluids and you improved. 
+You will need an MRI of your pancreas after you are better.
+You were also found to be intermitttently sleepy. This was 
+thought to be due to your pain medications. You should not take 
+these medications if you are sleepy.
+
+It is important that you follow up with Dr. ___ 
+your hospitalization.
+
+Weigh yourself every morning, call MD if weight goes up more 
+than 3 lbs.
+ 
+Followup Instructions:
+___
+----------------------------------------------------------------------------------------------------
+
+
+
+====================================================================================================
+STAY_ID = 35527336
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+TABLE: stay_id
+(Non-DataFrame object of type int)
+
+35527336
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hadm_id
+(Non-DataFrame object of type int)
+
+26774636
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: subject_id
+(Non-DataFrame object of type int)
+
+15938425
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: cohort_row
+(Non-DataFrame object of type Series)
+
+subject_id                                                 15938425
+hadm_id                                                    26774636
+stay_id                                                    35527336
+first_careunit     Medical/Surgical Intensive Care Unit (MICU/SICU)
+last_careunit      Medical/Surgical Intensive Care Unit (MICU/SICU)
+intime                                          2146-12-18 21:02:00
+outtime                                         2146-12-20 04:39:23
+los                                                        1.317627
+icu_intake_date                                          2146-12-18
+icu_out_date                                             2146-12-20
+Name: 9, dtype: object
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: icu
+(Non-DataFrame object of type dict)
+
+{'icustays':      subject_id   hadm_id   stay_id                                    first_careunit  ...             outtime       los icu_intake_date  icu_out_date
+135    15938425  26774636  35527336  Medical/Surgical Intensive Care Unit (MICU/SICU)  ... 2146-12-20 04:39:23  1.317627      2146-12-18    2146-12-20
+
+[1 rows x 10 columns], 'measurements':         subject_id   hadm_id   stay_id measurements_charttime  ... measurements_lownormalvalue  measurements_highnormalvalue measurements_date  measurements_time
+585960    15938425  26774636  35527336    2146-12-19 19:00:00  ...                         NaN                           NaN        2146-12-19           19:00:00
+585961    15938425  26774636  35527336    2146-12-19 19:00:00  ...                         NaN                           NaN        2146-12-19           19:00:00
+585962    15938425  26774636  35527336    2146-12-19 19:00:00  ...                         NaN                           NaN        2146-12-19           19:00:00
+585963    15938425  26774636  35527336    2146-12-19 19:00:00  ...                         NaN                           NaN        2146-12-19           19:00:00
+585964    15938425  26774636  35527336    2146-12-19 19:00:00  ...                         NaN                           NaN        2146-12-19           19:00:00
+...            ...       ...       ...                    ...  ...                         ...                           ...               ...                ...
+587017    15938425  26774636  35527336    2146-12-20 03:52:00  ...                         NaN                           NaN        2146-12-20           03:52:00
+587018    15938425  26774636  35527336    2146-12-20 03:52:00  ...                         NaN                           NaN        2146-12-20           03:52:00
+587019    15938425  26774636  35527336    2146-12-20 03:52:00  ...                         NaN                           NaN        2146-12-20           03:52:00
+587020    15938425  26774636  35527336    2146-12-20 03:52:00  ...                         NaN                           NaN        2146-12-20           03:52:00
+587021    15938425  26774636  35527336    2146-12-20 03:52:00  ...                         NaN                           NaN        2146-12-20           03:52:00
+
+[1062 rows x 15 columns], 'medications':        subject_id   hadm_id   stay_id  medications_amount  ... medications_start_date  medications_start_time medications_end_date medications_end_time
+11400    15938425  26774636  35527336            1.000000  ...             2146-12-19                19:30:00           2146-12-19             19:31:00
+11401    15938425  26774636  35527336          120.000000  ...             2146-12-19                19:30:00           2146-12-19             19:31:00
+11402    15938425  26774636  35527336          120.000000  ...             2146-12-19                22:00:00           2146-12-19             22:01:00
+11403    15938425  26774636  35527336          400.000000  ...             2146-12-19                10:00:00           2146-12-19             10:01:00
+11404    15938425  26774636  35527336           24.999999  ...             2146-12-18                22:25:00           2146-12-18             22:40:00
+11405    15938425  26774636  35527336          325.000000  ...             2146-12-18                22:40:00           2146-12-19             00:50:00
+11406    15938425  26774636  35527336            1.000000  ...             2146-12-19                07:31:00           2146-12-19             07:32:00
+11407    15938425  26774636  35527336           10.000000  ...             2146-12-19                07:31:00           2146-12-19             07:32:00
+
+[8 rows x 20 columns], 'outputevents':       subject_id   hadm_id   stay_id outputevents_charttime  ...  outputevents_unitname outputevents_warning outputevents_date outputevents_time
+7046    15938425  26774636  35527336    2146-12-19 21:00:00  ...                     mL                    0        2146-12-19          21:00:00
+7047    15938425  26774636  35527336    2146-12-19 23:00:00  ...                     mL                    0        2146-12-19          23:00:00
+7048    15938425  26774636  35527336    2146-12-20 04:00:00  ...                     mL                    0        2146-12-20          04:00:00
+7049    15938425  26774636  35527336    2146-12-18 23:57:00  ...                     mL                    0        2146-12-18          23:57:00
+7050    15938425  26774636  35527336    2146-12-19 06:20:00  ...                     mL                    0        2146-12-19          06:20:00
+
+[5 rows x 12 columns], 'procedureevents':       subject_id   hadm_id   stay_id  ...  procedureevents_warning procedureevents_start_date procedureevents_end_date
+1045    15938425  26774636  35527336  ...                        0                 2146-12-19               2146-12-19
+1046    15938425  26774636  35527336  ...                        0                 2146-12-18               2146-12-19
+1047    15938425  26774636  35527336  ...                        0                 2146-12-18               2146-12-19
+1048    15938425  26774636  35527336  ...                        0                 2146-12-19               2146-12-20
+
+[4 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hosp
+(Non-DataFrame object of type dict)
+
+{'patients_admissions':      subject_id   hadm_id           admittime           dischtime deathtime  ... gender anchor_age deathdate  admit_date discharge_date
+135    15938425  26774636 2146-12-18 19:06:00 2146-12-21 15:30:00       NaT  ...      F         62       NaT  2146-12-18     2146-12-21
+
+[1 rows x 16 columns], 'diagnoses':       subject_id   hadm_id  dx_seq_num                                      dx_long_title
+2442    15938425  26774636           1  Arteriovenous malformation of digestive system...
+2443    15938425  26774636           2            Obstructive hypertrophic cardiomyopathy
+2444    15938425  26774636           3                       Acute posthemorrhagic anemia
+2445    15938425  26774636           4      Hypertensive heart disease with heart failure
+2446    15938425  26774636           5       Chronic diastolic (congestive) heart failure
+2447    15938425  26774636           6                     Paroxysmal atrial fibrillation
+2448    15938425  26774636           7                         Unspecified atrial flutter
+2449    15938425  26774636           8  Atherosclerotic heart disease of native corona...
+2450    15938425  26774636           9                        Hyperlipidemia, unspecified
+2451    15938425  26774636          10             Presence of aortocoronary bypass graft
+2452    15938425  26774636          11                  Unspecified asthma, uncomplicated
+2453    15938425  26774636          12     Type 2 diabetes mellitus without complications
+2454    15938425  26774636          13  Gastro-esophageal reflux disease without esoph..., 'procedures':      subject_id   hadm_id  proc_seq_num                                    proc_long_title  ... procedure_date   stay_id              intime             outtime
+127    15938425  26774636             1  Destruction of Duodenum, Via Natural or Artifi...  ...     2146-12-19  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+
+[1 rows x 9 columns], 'labs':        subject_id     hadm_id lab_tests_charttime lab_tests_value  ...  lab_tests_time   stay_id              intime             outtime
+25870    15938425  26774636.0 2146-12-19 02:34:00              11  ...        02:34:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25871    15938425  26774636.0 2146-12-19 02:34:00              23  ...        02:34:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25872    15938425  26774636.0 2146-12-19 02:34:00             8.4  ...        02:34:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25873    15938425  26774636.0 2146-12-19 02:34:00             108  ...        02:34:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25874    15938425  26774636.0 2146-12-19 02:34:00             0.6  ...        02:34:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+...           ...         ...                 ...             ...  ...             ...       ...                 ...                 ...
+25944    15938425  26774636.0 2146-12-20 03:52:00             3.8  ...        03:52:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25945    15938425  26774636.0 2146-12-20 03:52:00             3.7  ...        03:52:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25946    15938425  26774636.0 2146-12-20 03:52:00             137  ...        03:52:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25947    15938425  26774636.0 2146-12-20 03:52:00               8  ...        03:52:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+25948    15938425  26774636.0 2146-12-20 03:52:00               5  ...        03:52:00  35527336 2146-12-18 21:02:00 2146-12-20 04:39:23
+
+[79 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: discharge_text
+(Non-DataFrame object of type str)
+
+Name:  ___                    Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+lisinopril / metformin / omeprazole
+ 
+Attending: ___
+ 
+Chief Complaint:
+___
+ 
+Major Surgical or Invasive Procedure:
+endoscopy ___
+ 
+History of Present Illness:
+___ with hx of HTN, HLD, dCHF/HOCM,CAD s/p CABG, asthma, 
+AF/Flutter s/p cardioversion ___ and ___ who presents with 
+melena and hematocrit of 20. Patient went to see an internist 
+today for persistent melena since her discharge from ___ for 
+melena on ___ and was found to have a hematocrit of 20. 
+Patient reports mild epigastric pain, multiple episodes of 
+melena daily, today with one large episode. No BRBPR. Associated 
+lightheadedness, dizziness, mild dyspnea. No syncope. Denies 
+chest pain, palpitations. Mild epigastric discomfort, feels like 
+gas pain. No nausea/vomiting. No fevers.
+
+The patient has not used aspirin or xarelto in past 3 days. BP 
+has been running low so did not use metoprolol.
+
+To summarize her last hospital course, the patient initially 
+presented to ___ with syncope and H/H drop from baseline ~12 
+to 7.3. The patient had an EGD on ___ which showed 
+bleeding angioectasias in the duodenum which were cauterized. 
+Due to concern for further bleeding from other parts of the 
+bowel, GI performed a capsule endoscopy on ___ which showed 
+fresh blood in the duodenum but no source in bleeding. The 
+capsule did not reach the cecum as the capsule remained in the 
+stomach for almost 6h. A colonoscopy on ___ revealed melanotic 
+stool but no source of bleeding in the colon. GI recommended a 
+push enteroscopy for the next step in evaluation. 
+
+Since she has left the hospital, she has continued to have ___ 
+melanotic stools per day. She feels lightheaded, dizzy, and has 
+not been sleeping well. She has not had much of an appetite. She 
+has not been taking her rivaroxaban since she was d/c'ed from 
+___ on ___.
+
+In the ED, initial vitals:  
+98.2 87 114/46 18 100% RA 
+Her initial H/H was 6.8/20.5 but has downtrended to 5.8/17.6. 
+She received 1 unit of blood and IV PPI BID. GI was consulted 
+and they will scope her tomorrow. 
+
+Chest x-ray showed cardiomegaly without superimposed acute 
+cardiopulmonary process. 
+
+On arrival to the MICU, HR 88, BP 107/82. Pt is comfortable, 
+mentating well. Interview conducted through ___ interpreter.
+ 
+Past Medical History:
+- CAD s/p CABG (LIMA-> LAD, SVG->OM1) -- per OSH records only 
+had 50-60% LMCA lesion on cath (unclear why this got 2V CABG) 
+- Paroxysmal A.Fib s/p cardioversion
+- DM II (A1c 6.8%)  
+- HTN  
+- HLD  
+- Echo ___: mild LVH, LVEF 55%  
+- Stress ___: Suboptimal exercise, abnormal wall motion in  
+septal region on imaging, exercise induced ischemia in RCA  
+and/or LCX  
+- hemorrhoids  
+- GERD  
+- History of precancerous anal lesion  
+- asthma  
+ 
+Social History:
+___
+Family History:
+-MI: two uncles (one with sudden death at age ___ and aunt
+-stomach cancer: paternal cousin, uncle  
+-pancreatic cancer: paternal aunt  
+-colon cancer maternal cousin at age ___  
+ 
+Physical Exam:
+ADMISSION EXAM
+==============
+Vitals:  T 98.5, HR 88, BP 107/82, RR 24, SpO2 100%/RA
+HEENT: AT/NC, anicteric sclera, MMM 
+CARDIAC: RRR, S1/S2, II/VI SEM heard best at apex. Sternotomy 
+scar. 
+LUNG: CTAB, no wheezes, rales, rhonchi, breathing comfortably 
+without use of accessory muscles  
+ABDOMEN: soft, nondistended, +BS, nontender in all quadrants, no 
+rebound/guarding
+EXTREMITIES: no cyanosis, clubbing or edema, moving all 4 
+extremities with purpose  
+PULSES: 2+ DP pulses bilaterally  
+
+DISCHARGE EXAM
+==============
+98.1 PO 144 / 76 98 018 100 RA 
+HEENT: AT/NC, anicteric sclera, MMM 
+CARDIAC: RRR, S1/S2, II/VI SEM heard best at apex. Sternotomy 
+scar. JVP flat.
+LUNG: CTAB, no wheezes, rales, rhonchi, breathing comfortably 
+without use of accessory muscles  
+ABDOMEN: soft, nondistended, +BS, nontender in all quadrants, no 
+rebound/guarding
+EXTREMITIES: no cyanosis, clubbing or edema, moving all 4 
+extremities with purpose  
+PULSES: 2+ DP pulses bilaterally 
+NEURO: A&Ox3, CN II-XII intact, ___ BUE/BLE 
+ 
+Pertinent Results:
+=================
+ADMISSION LABS
+=================
+___ 01:20PM BLOOD WBC-8.5# RBC-2.36* Hgb-6.8*# Hct-20.5* 
+MCV-87 MCH-28.8 MCHC-33.2 RDW-16.7* RDWSD-53.0* Plt ___
+___ 05:08PM BLOOD Neuts-52.7 ___ Monos-7.9 Eos-1.9 
+Baso-0.4 NRBC-0.4* Im ___ AbsNeut-3.60 AbsLymp-2.51 
+AbsMono-0.54 AbsEos-0.13 AbsBaso-0.03
+___ 01:20PM BLOOD Plt ___
+___ 05:08PM BLOOD ___ PTT-23.7* ___
+___ 05:08PM BLOOD Glucose-119* UreaN-11 Creat-0.6 Na-139 
+K-4.1 Cl-104 HCO3-24 AnGap-15
+___ 05:08PM BLOOD ALT-11 AST-42* AlkPhos-62 TotBili-0.8
+___ 05:08PM BLOOD Albumin-3.7 Calcium-8.4 Phos-2.8 Mg-2.1
+___ 05:14PM BLOOD Lactate-2.0
+___ 07:35PM URINE Color-Straw Appear-Clear Sp ___
+___ 07:35PM URINE Blood-NEG Nitrite-NEG Protein-NEG 
+Glucose-NEG Ketone-NEG Bilirub-NEG Urobiln-NEG pH-6.5 Leuks-SM 
+___ 07:35PM URINE RBC-<1 WBC-3 Bacteri-NONE Yeast-NONE 
+Epi-<1
+
+================
+KEY INTERIM LABS
+================
+___ 05:08PM BLOOD WBC-6.8 RBC-2.04* Hgb-5.8* Hct-17.6* 
+MCV-86 MCH-28.4 MCHC-33.0 RDW-17.4* RDWSD-54.9* Plt ___
+___ 02:34AM BLOOD WBC-6.5 RBC-2.81*# Hgb-8.6*# Hct-24.7*# 
+MCV-88 MCH-30.6 MCHC-34.8 RDW-15.6* RDWSD-49.7* Plt ___
+___ 06:06AM BLOOD WBC-6.3 RBC-2.80* Hgb-8.6* Hct-24.1* 
+MCV-86 MCH-30.7 MCHC-35.7 RDW-15.4 RDWSD-49.1* Plt ___
+___ 02:50PM BLOOD WBC-6.6 RBC-2.98* Hgb-9.0* Hct-25.4* 
+MCV-85 MCH-30.2 MCHC-35.4 RDW-15.9* RDWSD-49.2* Plt ___
+___ 08:01PM BLOOD WBC-6.5 RBC-3.03* Hgb-9.0* Hct-26.2* 
+MCV-87 MCH-29.7 MCHC-34.4 RDW-16.1* RDWSD-51.0* Plt ___
+___ 03:52AM BLOOD WBC-7.6 RBC-2.89* Hgb-8.8* Hct-25.0* 
+MCV-87 MCH-30.4 MCHC-35.2 RDW-16.2* RDWSD-51.2* Plt ___
+============
+IMAGING
+============
+CXR ___: Cardiomegaly without superimposed acute 
+cardiopulmonary process.
+
+EGD ___: Esophageal erosions
+Angioectasias in the second part of the duodenum and third part 
+of the duodenum (thermal therapy)
+Otherwise normal EGD to distal jejunum
+
+===============
+MICROBIOLOGY
+===============
+Urine culture ___ - No growth
+
+================
+DISCHARGE LABS
+================
+___ 09:26AM BLOOD WBC-6.9 RBC-3.23* Hgb-9.7* Hct-28.3* 
+MCV-88 MCH-30.0 MCHC-34.3 RDW-16.2* RDWSD-52.2* Plt ___
+___ 09:26AM BLOOD Glucose-140* UreaN-7 Creat-0.7 Na-139 
+K-4.2 Cl-104 HCO3-26 AnGap-___ year old woman with CAD s/p CABG and a.fib/flutter who 
+presents with persistent melena. An EGD with push enteroscopy 
+was performed which showed two bleeding AVMs in the duodenum 
+which were successfully cauterized. 
+
+ACUTE ISSUES:
+#GI Bleed: Patient presented with melena. Previous GI workup 
+showed bleeding angioectasis in the duodenum on EGD in ___ which were successfully cauterized. She was placed on IV 
+PPI BID and received 1u pRBC. She remained hemodynamically 
+stable. GI performed EGD with push enteroscopy which showed 2 
+bleeding AVM which were cauterized. Post-procedurally she 
+remained stable and was transferred to the floor for further 
+care. She had no further episodes of bleeding, and stools became 
+progressively lighter (has been constipated for last 3 days of 
+hospitalization so no recent stools). 
+
+CHRONIC ISSUES:
+#Afib: discharged on 25 Toprol from home 50qd. This could be 
+increased soon as an outpatient. Held anticoagulation (xarelto) 
+given bleeding, but patient will eventually need rechallenge. 
+#CAD: Held aspirin 81 mg due to GIB, but resumed on discharge 
+after discussing with GI. Resumed metop as above. 
+#dCHF: Held Lasix due to GIB. Euvolemic throughout. 
+#HLD: Continued home rosuvastatin.
+#DM: Diet controlled.
+#Asthma: Continued albuterol and fluticasone. 
+
+TRANSITIONAL ISSUES:
+Consider uptitration of metop as above back to previous dose
+Consider resumption of furosemide pending volume exam
+Recheck CBC this upcoming week to ensure continued stability
+Please ensure sucralfate is off after 2 weeks
+Please discontinue PPI after 8 weeks unless otherwise instructed 
+by GI
+Consider resumption of rivaroxaban, though patient at high risk 
+for rebleeding given AVMs
+
+# Communication:  ___, daughter/HCP, ___
+# Code:  Full code
+
+ 
+Medications on Admission:
+The Preadmission Medication list is accurate and complete.
+1. ProAir HFA (albuterol sulfate) 90 mcg/actuation inhalation 
+Q4-6H:PRN wheezing 
+2. Flovent HFA (fluticasone) 44 mcg/actuation inhalation DAILY 
+3. Furosemide 20 mg PO DAILY 
+4. Metoprolol Succinate XL 50 mg PO QAM 
+5. Rivaroxaban 20 mg PO QHS 
+6. Rosuvastatin Calcium 40 mg PO QPM 
+7. Aspirin 81 mg PO DAILY 
+8. calcium carbonate-vitamin D3 600 mg(1,500mg) -400 unit oral 
+DAILY 
+9. Multivitamins W/minerals 1 TAB PO DAILY 
+10. Systane (propylene glycol) (peg 400-propylene glycol) 
+0.4-0.3 % ophthalmic BID 
+
+ 
+Discharge Medications:
+1.  Pantoprazole 40 mg PO Q12H 
+take for 8 weeks 
+RX *pantoprazole 40 mg 1 tablet(s) by mouth twice a day Disp 
+#*112 Tablet Refills:*0 
+2.  Sucralfate 1 gm PO QID 
+Take for 2 weeks. 
+RX *sucralfate [Carafate] 1 gram/10 mL 1 suspension(s) by mouth 
+four times a day Refills:*0 
+3.  Metoprolol Succinate XL 25 mg PO DAILY 
+RX *metoprolol succinate 25 mg 1 tablet(s) by mouth daily Disp 
+#*30 Tablet Refills:*0 
+4.  Aspirin 81 mg PO DAILY  
+5.  calcium carbonate-vitamin D3 600 mg(1,500mg) -400 unit oral 
+DAILY  
+6.  Flovent HFA (fluticasone) 44 mcg/actuation inhalation DAILY  
+
+7.  Multivitamins W/minerals 1 TAB PO DAILY  
+8.  ProAir HFA (albuterol sulfate) 90 mcg/actuation inhalation 
+Q4-6H:PRN wheezing  
+9.  Rosuvastatin Calcium 40 mg PO QPM  
+10.  Systane (propylene glycol) (peg 400-propylene glycol) 
+0.4-0.3 % ophthalmic BID  
+11. HELD- Furosemide 20 mg PO DAILY  This medication was held. 
+Do not restart Furosemide until instructed by your doctors
+12. HELD- Rivaroxaban 20 mg PO QHS  This medication was held. Do 
+not restart Rivaroxaban until advised by your doctors
+
+ 
+___:
+Home
+ 
+Discharge Diagnosis:
+acute blood loss anemia
+UGIB ___ AVMs
+coronary artery disease
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+ 
+Discharge Instructions:
+Dear Ms. ___,
+It was a pleasure caring for you. You were admitted because you 
+had recurrent bleeding from your GI tract and low blood counts. 
+You had an endoscopy which found a few areas of arteriovascular 
+malformations "AVMs" as before, which received a burning therapy 
+to stop bleeding. Thankfully you had no more bleeding. Your 
+blood thinner continues to be held as previously, which puts you 
+at higher risk for stroke currently, but at this time the 
+benefits of holding this medicine outweighs the risks, as we 
+discussed. You will probably restart that soon in the future, 
+but do this only on the advice of your doctors. ___ was 
+also held, but might be restarted soon in the future. 
+ 
+Followup Instructions:
+___
+----------------------------------------------------------------------------------------------------
+
+
+
+====================================================================================================
+STAY_ID = 35517464
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+TABLE: stay_id
+(Non-DataFrame object of type int)
+
+35517464
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hadm_id
+(Non-DataFrame object of type int)
+
+26079973
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: subject_id
+(Non-DataFrame object of type int)
+
+16140378
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: cohort_row
+(Non-DataFrame object of type Series)
+
+subject_id                    16140378
+hadm_id                       26079973
+stay_id                       35517464
+first_careunit     Trauma SICU (TSICU)
+last_careunit      Trauma SICU (TSICU)
+intime             2138-10-03 10:36:00
+outtime            2138-10-04 12:18:57
+los                           1.071493
+icu_intake_date             2138-10-03
+icu_out_date                2138-10-04
+Name: 8, dtype: object
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: icu
+(Non-DataFrame object of type dict)
+
+{'icustays':      subject_id   hadm_id   stay_id       first_careunit        last_careunit              intime             outtime       los icu_intake_date icu_out_date
+140    16140378  26079973  35517464  Trauma SICU (TSICU)  Trauma SICU (TSICU) 2138-10-03 10:36:00 2138-10-04 12:18:57  1.071493      2138-10-03   2138-10-04, 'measurements':         subject_id   hadm_id   stay_id measurements_charttime  ... measurements_lownormalvalue  measurements_highnormalvalue measurements_date  measurements_time
+617913    16140378  26079973  35517464    2138-10-04 08:00:00  ...                         NaN                           NaN        2138-10-04           08:00:00
+617914    16140378  26079973  35517464    2138-10-04 08:00:00  ...                         NaN                           NaN        2138-10-04           08:00:00
+617915    16140378  26079973  35517464    2138-10-04 08:00:00  ...                         NaN                           NaN        2138-10-04           08:00:00
+617916    16140378  26079973  35517464    2138-10-04 08:00:00  ...                         NaN                           NaN        2138-10-04           08:00:00
+617917    16140378  26079973  35517464    2138-10-04 08:00:00  ...                         NaN                           NaN        2138-10-04           08:00:00
+...            ...       ...       ...                    ...  ...                         ...                           ...               ...                ...
+619563    16140378  26079973  35517464    2138-10-04 04:18:00  ...                         NaN                           NaN        2138-10-04           04:18:00
+619564    16140378  26079973  35517464    2138-10-04 04:18:00  ...                         NaN                           NaN        2138-10-04           04:18:00
+619565    16140378  26079973  35517464    2138-10-04 04:18:00  ...                         NaN                           NaN        2138-10-04           04:18:00
+619566    16140378  26079973  35517464    2138-10-04 04:18:00  ...                         NaN                           NaN        2138-10-04           04:18:00
+619567    16140378  26079973  35517464    2138-10-04 04:18:00  ...                         NaN                           NaN        2138-10-04           04:18:00
+
+[1655 rows x 15 columns], 'medications':        subject_id   hadm_id   stay_id  medications_amount  ... medications_start_date  medications_start_time medications_end_date medications_end_time
+11977    16140378  26079973  35517464          145.000000  ...             2138-10-04                10:22:00           2138-10-04             12:18:00
+11978    16140378  26079973  35517464         1000.000000  ...             2138-10-03                11:00:00           2138-10-03             11:01:00
+11979    16140378  26079973  35517464         3000.000000  ...             2138-10-03                11:05:00           2138-10-03             11:06:00
+11980    16140378  26079973  35517464          963.898996  ...             2138-10-03                11:05:00           2138-10-03             14:38:00
+11981    16140378  26079973  35517464           96.389899  ...             2138-10-03                11:05:00           2138-10-03             14:38:00
+11982    16140378  26079973  35517464          834.999980  ...             2138-10-03                12:44:00           2138-10-03             21:05:00
+11983    16140378  26079973  35517464          175.663813  ...             2138-10-03                14:38:00           2138-10-03             15:17:00
+11984    16140378  26079973  35517464           17.566382  ...             2138-10-03                14:38:00           2138-10-03             15:17:00
+11985    16140378  26079973  35517464           20.000000  ...             2138-10-03                14:45:00           2138-10-03             14:46:00
+11986    16140378  26079973  35517464            0.902256  ...             2138-10-03                15:11:00           2138-10-03             15:17:00
+11987    16140378  26079973  35517464            3.609023  ...             2138-10-03                15:11:00           2138-10-03             15:17:00
+11988    16140378  26079973  35517464           24.518361  ...             2138-10-03                15:17:00           2138-10-03             15:26:00
+11989    16140378  26079973  35517464            2.451836  ...             2138-10-03                15:17:00           2138-10-03             15:26:00
+11990    16140378  26079973  35517464           10.843521  ...             2138-10-03                15:17:00           2138-10-03             15:53:00
+11991    16140378  26079973  35517464           43.374086  ...             2138-10-03                15:17:00           2138-10-03             15:53:00
+11992    16140378  26079973  35517464           20.000000  ...             2138-10-03                15:53:00           2138-10-03             15:54:00
+11993    16140378  26079973  35517464           58.659996  ...             2138-10-03                15:53:00           2138-10-03             17:44:00
+11994    16140378  26079973  35517464          234.639985  ...             2138-10-03                15:53:00           2138-10-03             17:44:00
+11995    16140378  26079973  35517464           29.594246  ...             2138-10-03                17:44:00           2138-10-03             18:48:00
+11996    16140378  26079973  35517464          118.377000  ...             2138-10-03                17:44:00           2138-10-03             18:48:00
+11997    16140378  26079973  35517464            6.374142  ...             2138-10-03                18:48:00           2138-10-03             19:02:00
+11998    16140378  26079973  35517464           25.496570  ...             2138-10-03                18:48:00           2138-10-03             19:02:00
+11999    16140378  26079973  35517464           33.360322  ...             2138-10-03                19:02:00           2138-10-03             20:30:00
+12000    16140378  26079973  35517464          133.441295  ...             2138-10-03                19:02:00           2138-10-03             20:30:00
+12001    16140378  26079973  35517464           40.000001  ...             2138-10-03                19:11:00           2138-10-03             19:12:00
+12002    16140378  26079973  35517464           10.000000  ...             2138-10-03                19:11:00           2138-10-03             19:12:00
+12003    16140378  26079973  35517464           99.999998  ...             2138-10-03                19:11:00           2138-10-03             19:26:00
+12004    16140378  26079973  35517464         1000.000005  ...             2138-10-03                19:11:00           2138-10-03             19:26:00
+12005    16140378  26079973  35517464           42.405247  ...             2138-10-03                20:30:00           2138-10-03             22:50:00
+12006    16140378  26079973  35517464          169.621003  ...             2138-10-03                20:30:00           2138-10-03             22:50:00
+12007    16140378  26079973  35517464         1000.000037  ...             2138-10-03                21:05:00           2138-10-04             10:22:00
+12008    16140378  26079973  35517464           17.860250  ...             2138-10-03                22:50:00           2138-10-04             00:08:00
+12009    16140378  26079973  35517464           71.441002  ...             2138-10-03                22:50:00           2138-10-04             00:08:00
+12010    16140378  26079973  35517464           18.323208  ...             2138-10-04                00:08:00           2138-10-04             01:29:00
+12011    16140378  26079973  35517464           73.292834  ...             2138-10-04                00:08:00           2138-10-04             01:29:00
+12012    16140378  26079973  35517464           14.878527  ...             2138-10-04                01:29:00           2138-10-04             03:08:00
+12013    16140378  26079973  35517464           59.514111  ...             2138-10-04                01:29:00           2138-10-04             03:08:00
+12014    16140378  26079973  35517464            5.485517  ...             2138-10-04                03:08:00           2138-10-04             04:21:00
+12015    16140378  26079973  35517464           21.942071  ...             2138-10-04                03:08:00           2138-10-04             04:21:00
+12016    16140378  26079973  35517464           20.000000  ...             2138-10-03                10:40:00           2138-10-03             10:41:00
+12017    16140378  26079973  35517464           20.000000  ...             2138-10-03                10:50:00           2138-10-03             10:51:00
+12018    16140378  26079973  35517464           36.101081  ...             2138-10-03                10:55:00           2138-10-03             11:05:00
+12019    16140378  26079973  35517464            3.610108  ...             2138-10-03                10:55:00           2138-10-03             11:05:00
+12020    16140378  26079973  35517464            0.145417  ...             2138-10-03                10:55:00           2138-10-03             16:44:00
+12021    16140378  26079973  35517464            2.908333  ...             2138-10-03                10:55:00           2138-10-03             16:44:00
+
+[45 rows x 20 columns], 'outputevents':       subject_id   hadm_id   stay_id outputevents_charttime  ...  outputevents_unitname outputevents_warning outputevents_date outputevents_time
+7449    16140378  26079973  35517464    2138-10-04 08:00:00  ...                     mL                    0        2138-10-04          08:00:00
+7450    16140378  26079973  35517464    2138-10-03 11:06:00  ...                     mL                    0        2138-10-03          11:06:00
+7451    16140378  26079973  35517464    2138-10-03 12:00:00  ...                     mL                    0        2138-10-03          12:00:00
+7452    16140378  26079973  35517464    2138-10-03 13:00:00  ...                     mL                    0        2138-10-03          13:00:00
+7453    16140378  26079973  35517464    2138-10-03 14:00:00  ...                     mL                    0        2138-10-03          14:00:00
+7454    16140378  26079973  35517464    2138-10-03 15:00:00  ...                     mL                    0        2138-10-03          15:00:00
+7455    16140378  26079973  35517464    2138-10-03 16:00:00  ...                     mL                    0        2138-10-03          16:00:00
+7456    16140378  26079973  35517464    2138-10-03 17:00:00  ...                     mL                    0        2138-10-03          17:00:00
+7457    16140378  26079973  35517464    2138-10-03 18:00:00  ...                     mL                    0        2138-10-03          18:00:00
+7458    16140378  26079973  35517464    2138-10-03 18:00:00  ...                     mL                    0        2138-10-03          18:00:00
+7459    16140378  26079973  35517464    2138-10-03 19:00:00  ...                     mL                    0        2138-10-03          19:00:00
+7460    16140378  26079973  35517464    2138-10-03 21:00:00  ...                     mL                    0        2138-10-03          21:00:00
+7461    16140378  26079973  35517464    2138-10-03 22:00:00  ...                     mL                    0        2138-10-03          22:00:00
+7462    16140378  26079973  35517464    2138-10-03 23:00:00  ...                     mL                    0        2138-10-03          23:00:00
+7463    16140378  26079973  35517464    2138-10-04 00:00:00  ...                     mL                    0        2138-10-04          00:00:00
+7464    16140378  26079973  35517464    2138-10-04 02:00:00  ...                     mL                    0        2138-10-04          02:00:00
+7465    16140378  26079973  35517464    2138-10-04 03:00:00  ...                     mL                    0        2138-10-04          03:00:00
+7466    16140378  26079973  35517464    2138-10-04 04:00:00  ...                     mL                    0        2138-10-04          04:00:00
+7467    16140378  26079973  35517464    2138-10-04 05:00:00  ...                     mL                    0        2138-10-04          05:00:00
+7468    16140378  26079973  35517464    2138-10-04 06:00:00  ...                     mL                    0        2138-10-04          06:00:00
+7469    16140378  26079973  35517464    2138-10-04 07:00:00  ...                     mL                    0        2138-10-04          07:00:00
+7470    16140378  26079973  35517464    2138-10-04 09:00:00  ...                     mL                    0        2138-10-04          09:00:00
+7471    16140378  26079973  35517464    2138-10-04 10:00:00  ...                     mL                    0        2138-10-04          10:00:00
+7472    16140378  26079973  35517464    2138-10-04 11:00:00  ...                     mL                    0        2138-10-04          11:00:00
+7473    16140378  26079973  35517464    2138-10-03 11:00:00  ...                     mL                    0        2138-10-03          11:00:00
+
+[25 rows x 12 columns], 'procedureevents':       subject_id   hadm_id   stay_id  ...  procedureevents_warning procedureevents_start_date procedureevents_end_date
+1097    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-03
+1098    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-03
+1099    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-03
+1100    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-03
+1101    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-04
+1102    16140378  26079973  35517464  ...                        0                 2138-10-04               2138-10-04
+1103    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-04
+1104    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-04
+1105    16140378  26079973  35517464  ...                        0                 2138-10-03               2138-10-04
+
+[9 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: hosp
+(Non-DataFrame object of type dict)
+
+{'patients_admissions':      subject_id   hadm_id           admittime           dischtime deathtime  ... gender anchor_age deathdate  admit_date discharge_date
+140    16140378  26079973 2138-10-03 08:54:00 2138-10-04 16:15:00       NaT  ...      M         32       NaT  2138-10-03     2138-10-04
+
+[1 rows x 16 columns], 'diagnoses':       subject_id   hadm_id  dx_seq_num                                      dx_long_title
+2541    16140378  26079973           1  Unspecified fracture of occiput, initial encou...
+2542    16140378  26079973           2             Acute respiratory failure with hypoxia
+2543    16140378  26079973           3  Traumatic subdural hemorrhage with loss of con...
+2544    16140378  26079973           4  Other fracture of base of skull, initial encou...
+2545    16140378  26079973           5  Traumatic subarachnoid hemorrhage with loss of...
+2546    16140378  26079973           6  Exposure to other specified factors, initial e...
+2547    16140378  26079973           7                           Hypotension, unspecified
+2548    16140378  26079973           8       Alcohol abuse with intoxication, unspecified
+2549    16140378  26079973           9  Glasgow coma scale score 13-15, at arrival to ...
+2550    16140378  26079973          10            Cocaine use, unspecified, uncomplicated, 'procedures': Empty DataFrame
+Columns: [subject_id, hadm_id, proc_seq_num, proc_long_title, procedure_chartdatetime, procedure_date, stay_id, intime, outtime]
+Index: [], 'labs':        subject_id     hadm_id lab_tests_charttime lab_tests_value  ...  lab_tests_time   stay_id              intime             outtime
+27190    16140378  26079973.0 2138-10-03 11:15:00            40.1  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27191    16140378  26079973.0 2138-10-03 11:15:00            12.9  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27192    16140378  26079973.0 2138-10-03 11:15:00            28.7  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27193    16140378  26079973.0 2138-10-03 11:15:00            32.2  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27194    16140378  26079973.0 2138-10-03 11:15:00              89  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27195    16140378  26079973.0 2138-10-03 11:15:00             172  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27196    16140378  26079973.0 2138-10-03 11:15:00            13.4  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27197    16140378  26079973.0 2138-10-03 11:15:00            4.49  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27198    16140378  26079973.0 2138-10-03 11:15:00            17.6  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27199    16140378  26079973.0 2138-10-03 11:15:00            43.7  ...        11:15:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27200    16140378  26079973.0 2138-10-04 04:18:00             1.2  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27201    16140378  26079973.0 2138-10-04 04:18:00            13.4  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27202    16140378  26079973.0 2138-10-04 04:18:00              52  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27203    16140378  26079973.0 2138-10-04 04:18:00              89  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27204    16140378  26079973.0 2138-10-04 04:18:00             ___  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27205    16140378  26079973.0 2138-10-04 04:18:00              32  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27206    16140378  26079973.0 2138-10-04 04:18:00              24  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27207    16140378  26079973.0 2138-10-04 04:18:00             0.9  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27208    16140378  26079973.0 2138-10-04 04:18:00             9.1  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27209    16140378  26079973.0 2138-10-04 04:18:00             104  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27210    16140378  26079973.0 2138-10-04 04:18:00             0.7  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27211    16140378  26079973.0 2138-10-04 04:18:00            None  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27212    16140378  26079973.0 2138-10-04 04:18:00             ___  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27213    16140378  26079973.0 2138-10-04 04:18:00              22  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27214    16140378  26079973.0 2138-10-04 04:18:00               1  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27215    16140378  26079973.0 2138-10-04 04:18:00              17  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27216    16140378  26079973.0 2138-10-04 04:18:00             1.9  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27217    16140378  26079973.0 2138-10-04 04:18:00             2.3  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27218    16140378  26079973.0 2138-10-04 04:18:00             ___  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27219    16140378  26079973.0 2138-10-04 04:18:00             ___  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27220    16140378  26079973.0 2138-10-04 04:18:00              90  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27221    16140378  26079973.0 2138-10-04 04:18:00               7  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27222    16140378  26079973.0 2138-10-04 04:18:00              10  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27223    16140378  26079973.0 2138-10-04 04:18:00            42.6  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27224    16140378  26079973.0 2138-10-04 04:18:00            14.1  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27225    16140378  26079973.0 2138-10-04 04:18:00            28.7  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27226    16140378  26079973.0 2138-10-04 04:18:00            33.1  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27227    16140378  26079973.0 2138-10-04 04:18:00              87  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27228    16140378  26079973.0 2138-10-04 04:18:00             181  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27229    16140378  26079973.0 2138-10-04 04:18:00            13.2  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27230    16140378  26079973.0 2138-10-04 04:18:00            4.92  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27231    16140378  26079973.0 2138-10-04 04:18:00            15.6  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+27232    16140378  26079973.0 2138-10-04 04:18:00            41.4  ...        04:18:00  35517464 2138-10-03 10:36:00 2138-10-04 12:18:57
+
+[43 rows x 15 columns]}
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+TABLE: discharge_text
+(Non-DataFrame object of type str)
+
+Name:  ___  ___ No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   M
+ 
+Service: NEUROSURGERY
+ 
+Allergies: 
+No Allergies/ADRs on File
+ 
+Attending: ___.
+ 
+Chief Complaint:
+TBI
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ Critical is a ___ male who presents to ___
+on ___ with a moderate TBI. The patient was reportedly 
+found
+down outside a bar, transported to OSH where he was found to be
+intoxicated, and was observed in the ED for a sober-evaluation.
+Per OSH report, patient with GCS 13. At some point, a head CT 
+was
+ordered, revealing SDH, EDH, tSAH and frontal contusions. He was
+transferred to ___ for neurosurgical evaluation/management. He
+was intubated in the emergency department for uncooperative,
+hypotensive and requiring additional imaging for workup. 
+Neurosurgery arrived at bedside to examine patient just prior to
+intubation.
+ 
+Past Medical History:
+Unknown
+ 
+Social History:
+___
+Family History:
+Unknown
+ 
+Physical Exam:
+ON ADMISSION:
+*************
+Physical Exam:
+
+T:98.1 BP:111/65   HR:82   RR:18  O2 Sat:99%
+
+GCS at the scene: __unknown __
+
+GCS upon Neurosurgery Evaluation:  14      
+Time of evaluation: 0545
+
+Airway: [ ]Intubated   [X]Not intubated
+
+Eye Opening: 
+ [ ]1 Does not open eyes
+ [ ]2 Opens eyes to painful stimuli
+ [ ]3 Opens eyes to voice
+ [X]4 Opens eyes spontaneously
+
+Verbal:
+ [ ]1 Makes no sounds
+ [ ]2 Incomprehensible sounds
+ [ ]3 Inappropriate words
+ [x]4 Confused, disoriented
+ [ ]5 Oriented
+
+Motor:
+ [ ]1 No movement
+ [ ]2 Extension to painful stimuli (decerebrate response)
+ [ ]3 Abnormal flexion to painful stimuli (decorticate response)
+ [ ___ Flexion/ withdrawal to painful stimuli 
+ [ ]5 Localizes to painful stimuli
+ [x]6 Obeys commands
+
+Exam:
+
+Gen: WD/WN, comfortable, NAD.
+HEENT:
+Neck: 
+Extrem: warm and well perfused
+
+Neuro:
+
+Mental Status: Awake, alert,disoriented, confused,
+
+Orientation: Oriented to person, patient stated his name 
+___
+
+___ 3mm bilaterally reactive 
+Patient able to follow commands,tongue midline. 
+Moves all extremities to command, BUE ___, bilateral lower
+extremity antigravity unable to assess strength due to
+uncooperative.  
+
+Imaging:
+
+CT Head :
+1. Subarachnoid hemorrhage in the right temporoparietal lobe as
+well as in the bilateral anterior frontal lobes.
+2. Small focus of intraparenchymal hemorrhage in the right
+anterior frontal lobe.
+3. Small parafalcine subdural hematoma.
+4. Nondisplaced fracture extending along the calvarium involving
+the bilateraltemporoparietal and occipital bones.
+
+ON DISCHARGE:
+*************
+General:
+Tmax 99.6; HR 60-97; 96-128/50-83; RR ___ SpO2 87-100% now ra
+
+Bowel Regimen: [x]Yes [ ]No    Last BM: PTA
+ 
+Exam:
+
+___ 15
+
+Opens eyes: [x]spontaneous [ ]to voice [ ]to noxious
+
+Orientation: [x]Person [x]Place [x]Time
+
+Follows commands: [ ]Simple [x]Complex [ ]None
+
+Pupils:  Right 3-2mm                    Left 3-2mm
+
+EOM: [x]Full [ ]Restricted
+
+Face Symmetric: [x]Yes [ ]NoTongue Midline: [x]Yes [ ]No
+
+Pronator Drift [ ]Yes [x]No     Speech Fluent: [x]Yes [ ]No
+
+Comprehension intact [x]Yes [ ]No
+
+Motor:
+TrapDeltoidBicepTricepGrip
+IPQuadHamATEHLGast
+
+[x]Sensation intact to light touch
+ 
+Pertinent Results:
+See OMR. 
+ 
+Brief Hospital Course:
+___ male transferred to the ___ ED in the early 
+morning of ___ for alcohol intoxication and disorientation. Head 
+CT at OSH revealed bilateral subdural hematomas, subarachnoid 
+hemorrhage, contusions and bilateral temporal and occipital bone 
+fractures. Unknown mechanism of trauma. The patient was 
+intubated in the ED for hypotension and behavioral purposes and 
+transferred to the Trauma ICU. Keppra 1000mg twice-a-day for 
+one-week was initiated for seizure prophylaxis. A repeat head CT 
+was stable. He was extubated on ___ and did well from a 
+respiratory standpoint. He remained neurologically stable and 
+intact overnight and was transferred out to the floor on ___. ___ 
+evaluated the patient and deemed him safe to discharge home. OT 
+also evaluated him and cleared him for discharge. He was 
+discharged home in stable condition on ___.
+ 
+Medications on Admission:
+Unknown
+ 
+Discharge Medications:
+1.  Acetaminophen 650 mg PO Q6H:PRN Pain - Mild/Fever  
+2.  Docusate Sodium 100 mg PO BID  
+3.  LevETIRAcetam 1000 mg PO BID  
+
+ 
+Discharge Disposition:
+Home
+ 
+Discharge Diagnosis:
+Traumatic brain injury
+Subdural hematoma
+Subarachnoid hemorrhage
+Temporal and occipital bone fractures
+Alcohol intoxication
+
+ 
+Discharge Condition:
+Mental Status: Clear and coherent.
+Level of Consciousness: Alert and interactive.
+Activity Status: Ambulatory - Independent.
+
+ 
+Discharge Instructions:
+Activity
+We recommend that you refrain from any heavy manual labor for 
+at a minimum of one week following your injury. If you perform 
+heavy manual labor as part of your job, a work note can be 
+provided to you. Please call the Neurosurgery office at ___ if you decide you need a note to excuse you from work 
+following discharge.
+We recommend that you avoid heavy lifting, running, climbing, 
+or other strenuous exercise until your follow-up appointment.
+You make take leisurely walks and slowly increase your 
+activity at your own pace once you are symptom free at rest. 
+___ try to do too much all at once.
+You make take a shower 3 days after surgery. 
+No driving while taking any narcotic or sedating medication. 
+If you experienced a seizure while admitted, you are NOT 
+allowed to drive by law. 
+No contact sports until cleared by your neurosurgeon. You 
+should avoid contact sports for 6 months. 
+
+Medications
+Please do NOT take any blood thinning medication (Aspirin, 
+Ibuprofen, Plavix, Coumadin) until cleared by the neurosurgeon. 
+You have been discharged on Keppra (Levetiracetam). This 
+medication helps to prevent seizures. Please continue this 
+medication as indicated on your discharge instruction. It is 
+important that you take this medication consistently and on 
+time. 
+You may use Acetaminophen (Tylenol) for minor discomfort if 
+you are not otherwise restricted from taking this medication.
+
+What You ___ Experience:
+You may have difficulty paying attention, concentrating, and 
+remembering new information.
+Emotional and/or behavioral difficulties are common. 
+Feeling more tired, restlessness, irritability, and mood 
+swings are also common.
+Constipation is common. Be sure to drink plenty of fluids and 
+eat a high-fiber diet. If you are taking narcotics (prescription 
+pain medications), try an over-the-counter stool softener.
+
+Headaches:
+Headache is one of the most common symptoms after traumatic 
+brain injury. Headaches can be long-lasting. 
+Most headaches are not dangerous but you should call your 
+doctor if the headache gets worse, develop arm or leg weakness, 
+increased sleepiness, and/or have nausea or vomiting with a 
+headache. 
+Mild pain medications may be helpful with these headaches but 
+avoid taking pain medications on a daily basis unless prescribed 
+by your doctor. 
+There are other things that can be done to help with your 
+headaches: avoid caffeine, get enough sleep, daily exercise, 
+relaxation/ meditation, massage, acupuncture, heat or ice packs. 
+
+
+More Information about Brain Injuries:
+You were given information about headaches after TBI and the 
+impact that TBI can have on your family.
+If you would like to read more about other topics such as: 
+sleeping, driving, cognitive problems, emotional problems, 
+fatigue, seizures, return to school, depression, balance, or/and 
+sexuality after TBI, please ask our staff for this information 
+or visit ___
+
+When to Call Your Doctor at ___ for:
+Severe pain, swelling, redness or drainage from the incision 
+site. 
+Fever greater than 101.5 degrees Fahrenheit
+Nausea and/or vomiting
+Extreme sleepiness and not being able to stay awake
+Severe headaches not relieved by pain relievers
+Seizures
+Any new problems with your vision or ability to speak
+Weakness or changes in sensation in your face, arms, or leg
+
+Call ___ and go to the nearest Emergency Room if you experience 
+any of the following:
+Sudden numbness or weakness in the face, arm, or leg
+Sudden confusion or trouble speaking or understanding
+Sudden trouble walking, dizziness, or loss of balance or 
+coordination
+Sudden severe headaches with no known reason
+
+ 
+Followup Instructions:
+___
+----------------------------------------------------------------------------------------------------
+
+
+
