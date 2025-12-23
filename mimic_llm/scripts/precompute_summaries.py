@@ -74,8 +74,9 @@ def main():
         return
 
     # --- BATCH CONTROL ---
-    BATCH_SIZE = 50
-    current_batch = ids_to_process[:BATCH_SIZE]
+    # BATCH_SIZE = 50
+    # current_batch = ids_to_process[:BATCH_SIZE]
+    current_batch = ids_to_process
     print(f"Processing next batch of {len(current_batch)} stays...")
     print("-" * 40)
 

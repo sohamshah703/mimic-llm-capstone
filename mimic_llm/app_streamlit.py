@@ -11,6 +11,7 @@ if PROJECT_ROOT not in sys.path:
 
 from paths import COHORT_META_DIR
 from features import load_all_tables_for_stay
+from eval import compare_summaries  # Import for live metric calculation
 from visuals import (
     render_medications_visuals,
     render_measurements_visuals,
@@ -34,6 +35,7 @@ VIEW_LABELS = {
     "measurements": "Vitals / Measurements",
     "outputs": "Outputs (Fluids)",
     "procedureevents": "ICU Procedures",
+    "final": "Final Discharge Summary"
 }
 VIEW_KEYS = {v: k for k, v in VIEW_LABELS.items()}
 
@@ -78,6 +80,10 @@ def main():
         )
         current_view_slug = VIEW_KEYS[view_label]
 
+        st.markdown("---")
+        st.header("Display Options")
+        show_ground_truth = st.checkbox("Show Actual Discharge Note", value=True)
+
     # Get data for selected stay
     stay_record = precomputed.get(str(selected_stay_id))
     
@@ -115,11 +121,12 @@ def main():
         with tab2:
             st.info(med_final)
 
-        st.markdown("---")
-        st.markdown("### 📄 Actual Discharge Note (Ground Truth)")
-        
-        discharge_text = stay_record.get("discharge_text", "")
-        st.markdown(f"```\n{discharge_text}\n```")
+        # Conditional Display of Ground Truth
+        if show_ground_truth:
+            st.markdown("---")
+            st.markdown("### 📄 Actual Discharge Note (Ground Truth)")
+            discharge_text = stay_record.get("discharge_text", "")
+            st.markdown(f"```\n{discharge_text}\n```")
 
     # === RIGHT COLUMN: DRILL-DOWN VIEW ===
     with right_col:
@@ -130,11 +137,10 @@ def main():
         v_med = view_data.get("meditron", "N/A")
         
         # --- NEW TAB STRUCTURE ---
-        # Added "Pipeline Inspector" as the 4th tab
         v_tab1, v_tab2, v_tab3, v_tab4 = st.tabs([
             "FLAN-T5 (View)", 
             "Meditron-7B (View)", 
-            "Metrics", 
+            "Metrics & Visuals", 
             "🛠️ Pipeline Inspector"
         ])
         
@@ -142,57 +148,88 @@ def main():
             st.success(v_flan)
         with v_tab2:
             st.info(v_med)
+            
+        # --- MERGED TAB: METRICS + VISUALS ---
         with v_tab3:
-            mets = view_data.get("metrics", {})
-            if mets:
-                f_m = mets.get("flan", {})
-                m_m = mets.get("meditron", {})
-                df_m = pd.DataFrame({
-                    "Metric": ["BERT-P", "Embed-Sim", "Med-Density"],
-                    "FLAN": [f_m.get('bert_precision',0), f_m.get('embedding_similarity',0), f_m.get('medical_term_density',0)],
-                    "Meditron": [m_m.get('bert_precision',0), m_m.get('embedding_similarity',0), m_m.get('medical_term_density',0)]
-                })
-                st.dataframe(df_m.set_index("Metric").round(3), use_container_width=True)
+            # 1. Metrics Section (LIVE CALCULATION)
+            st.markdown("#### Evaluation Metrics")
+            
+            # Use Live Calculation
+            discharge_text = stay_record.get("discharge_text", "")
+            
+            # Determine which text to compare
+            if current_view_slug == "final":
+                txt_flan = final_view.get("flan", "")
+                txt_med = final_view.get("meditron", "")
             else:
-                st.write("No metrics available.")
+                txt_flan = v_flan
+                txt_med = v_med
+
+            live_metrics = compare_summaries(txt_flan, txt_med, discharge_text)
+            f_m = live_metrics["flan"]
+            m_m = live_metrics["meditron"]
+                
+            df_m = pd.DataFrame({
+                "Metric": [
+                    "BERT Precision", 
+                    "Embedding Similarity", 
+                    "Medical Term Density",
+                    "ROUGE-1 (F1)"
+                ],
+                "FLAN-T5": [
+                    f_m.get('bert_precision', 0), 
+                    f_m.get('embedding_similarity', 0), 
+                    f_m.get('medical_term_density', 0),
+                    f_m.get('rouge1', 0)
+                ],
+                "Meditron-7B": [
+                    m_m.get('bert_precision', 0), 
+                    m_m.get('embedding_similarity', 0), 
+                    m_m.get('medical_term_density', 0),
+                    m_m.get('rouge1', 0)
+                ]
+            })
+            st.dataframe(df_m.set_index("Metric").round(3), use_container_width=True)
+
+            st.markdown("---")
+            st.markdown("#### Data Visualizations")
+            
+            # 2. Visualizations Section
+            if current_view_slug == "admission":
+                render_admission_table(raw_stay_data)
+            elif current_view_slug == "dx_proc":
+                render_diagnoses_table(raw_stay_data)
+                render_hosp_procedures_table(raw_stay_data)
+            elif current_view_slug == "labs":
+                render_labs_visuals(raw_stay_data, icu_intime=icu_intime)
+            elif current_view_slug == "meds":
+                render_medications_visuals(raw_stay_data, icu_intime=icu_intime)
+            elif current_view_slug == "measurements":
+                render_measurements_visuals(raw_stay_data, icu_intime=icu_intime)
+            elif current_view_slug == "outputs":
+                render_outputs_visuals(raw_stay_data)
+            elif current_view_slug == "procedureevents":
+                render_icu_procedureevents_table(raw_stay_data)
 
         # --- THE INSPECTOR TAB ---
         with v_tab4:
-            st.markdown("#### Step 1: Computational Abstraction")
-            st.caption("This is the raw mathematical data (Trends & Units) extracted from the database.")
-            # Display Features JSON (limit height to avoid scrolling forever)
-            feats = view_data.get("debug_features", {})
-            # If it's a dict with a single key list (like {'labs_summary': [...]}), unwrap it for cleaner view
-            if isinstance(feats, dict) and len(feats) == 1 and isinstance(list(feats.values())[0], list):
-                st.json(list(feats.values())[0], expanded=False)
-            else:
-                st.json(feats, expanded=False)
+            # Step 1: Features (Expanded by Default)
+            with st.expander("Step 1: Computational Abstraction (Feature Engineering)", expanded=True):
+                st.caption("This is the raw mathematical data (Trends & Units) extracted from the database.")
+                feats = view_data.get("debug_features", {})
+                
+                # Logic to unwrap single keys for cleaner display
+                data_to_show = feats
+                if isinstance(feats, dict) and len(feats) == 1 and isinstance(list(feats.values())[0], list):
+                    data_to_show = list(feats.values())[0]
+                
+                st.json(data_to_show, expanded=True)
 
-            st.markdown("#### Step 2: Prompt Construction")
-            st.caption("This is the exact instruction sent to the LLM.")
-            # Show the prompt text (FLAN version usually representative)
-            prompt_text = view_data.get("debug_prompt_flan", "No prompt data saved.")
-            st.text_area("Prompt Text", prompt_text, height=200, disabled=True)
-
-        st.markdown("---")
-        st.markdown(f"### 📊 Visualizations: {view_label}")
-
-        # 2. Bottom Right: Visuals (Keep existing visual logic)
-        if current_view_slug == "admission":
-            render_admission_table(raw_stay_data)
-        elif current_view_slug == "dx_proc":
-            render_diagnoses_table(raw_stay_data)
-            render_hosp_procedures_table(raw_stay_data)
-        elif current_view_slug == "labs":
-            render_labs_visuals(raw_stay_data, icu_intime=icu_intime)
-        elif current_view_slug == "meds":
-            render_medications_visuals(raw_stay_data, icu_intime=icu_intime)
-        elif current_view_slug == "measurements":
-            render_measurements_visuals(raw_stay_data, icu_intime=icu_intime)
-        elif current_view_slug == "outputs":
-            render_outputs_visuals(raw_stay_data)
-        elif current_view_slug == "procedureevents":
-            render_icu_procedureevents_table(raw_stay_data)
+            # Step 2: Prompt (Expanded by Default)
+            with st.expander("Step 2: Prompt Construction (Linearization)", expanded=True):
+                st.caption("This is the exact instruction sent to the LLM.")
+                prompt_text = view_data.get("debug_prompt_flan", "No prompt data saved.")
+                st.text_area("Prompt Text", prompt_text, height=400, disabled=True)
 
 if __name__ == "__main__":
     main()

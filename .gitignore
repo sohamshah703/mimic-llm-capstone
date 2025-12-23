@@ -16,10 +16,9 @@ venv/
 *.parquet
 /exports/
 /logs/
+*.txt
 
-# 4. Ignore the huge Precomputed JSON (Optional)
-# If the JSON is small (<50MB) you can keep it. 
-# If it's huge, ignore it, or use Git LFS.
+# 4. Ignore the huge Precomputed JSON
 precomputed_cohort_summaries.json
 
 # 5. Ignore VS Code settings
